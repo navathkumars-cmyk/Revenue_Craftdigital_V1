@@ -12,13 +12,13 @@ import { Reveal } from "@/components/motion/reveal"
 
 export function CtaSection() {
   return (
-    <Section spacing="lg">
+    <Section spacing="md">
       <Container>
         <div className="bg-ink-950 relative isolate overflow-hidden rounded-3xl">
           <ParallaxLayer className="absolute inset-0 -z-10" speed={0.2}>
             <GradientMesh variant="hero" />
           </ParallaxLayer>
-          <Reveal className="glass glass-strong relative m-3 flex flex-col items-center gap-6 rounded-2xl px-8 py-14 text-center sm:m-6 sm:px-16 sm:py-20">
+          <Reveal className="glass glass-strong relative m-3 flex flex-col items-center gap-6 rounded-2xl px-8 py-12 text-center sm:m-6 sm:px-16 sm:py-16">
             <h2 className="text-display-lg max-w-2xl text-balance text-white">
               Ready to turn ad spend into predictable revenue?
             </h2>

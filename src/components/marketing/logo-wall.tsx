@@ -1,10 +1,12 @@
-const placeholderClients = ["Northwind", "Vantage Health", "Ledger&Co", "Brightloop", "Kavara", "Fieldstone"]
+const verifiedClients = ["Northwind", "Vantage Health", "Fieldstone"]
 
-/** Swap these text marks for real client logos (SVG, currentColor fill) once available. */
+/** Only names with a matching case study and named testimonial belong here —
+ * this row sits under a "trusted by" claim, so nothing unverified goes in it.
+ * Swap for real client logos (SVG, currentColor fill) once available. */
 export function LogoWall() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-70 grayscale">
-      {placeholderClients.map((name) => (
+      {verifiedClients.map((name) => (
         <span key={name} className="text-muted-foreground text-lg font-semibold tracking-tight">
           {name}
         </span>

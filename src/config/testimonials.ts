@@ -13,7 +13,7 @@ export const testimonials: Testimonial[] = [
       "They think in unit economics, not impressions. Every recommendation was tied back to what it meant for our margins — that's rare in performance marketing.",
     name: "Marcus Ade",
     role: "Founder",
-    company: "Fieldstone D2C",
+    company: "Fieldstone",
   },
   {
     quote:

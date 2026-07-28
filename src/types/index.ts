@@ -29,6 +29,9 @@ export interface Industry {
   summary: string
   /** Key into `iconRegistry` — see note on Service.icon. */
   icon: string
+  /** Service slugs shown on this industry's detail page, curated per industry
+   * rather than a generic top-3 — see note on the industry detail page. */
+  relevantServiceSlugs: string[]
 }
 
 export interface CaseStudy {
@@ -37,6 +40,8 @@ export interface CaseStudy {
   industry: string
   headline: string
   summary: string
+  challenge: string
+  approach: string
   metrics: { label: string; value: string }[]
   logo?: string
 }

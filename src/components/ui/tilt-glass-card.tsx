@@ -33,7 +33,11 @@ export function TiltGlassCard({
   const surface = (
     <GlassCard
       strong={strong}
-      className={cn("hover:shadow-glow h-full transition-shadow duration-slow", className)}
+      className={cn(
+        "hover:shadow-glow h-full transition-all duration-slow",
+        href && "hover:border-brand-300 dark:hover:border-brand-700",
+        className
+      )}
       {...props}
     >
       {children}

@@ -5,9 +5,9 @@ interface SectionProps extends React.ComponentProps<"section"> {
 }
 
 const spacingClasses: Record<NonNullable<SectionProps["spacing"]>, string> = {
-  sm: "py-12 md:py-16",
-  md: "py-20 md:py-28",
-  lg: "py-28 md:py-40",
+  sm: "py-10 md:py-14",
+  md: "py-14 md:py-20",
+  lg: "py-20 md:py-28",
 }
 
 /** Standard vertical rhythm wrapper for marketing page sections. */

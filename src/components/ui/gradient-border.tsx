@@ -29,7 +29,7 @@ export function GradientBorder({
   return (
     <div
       className={cn(
-        "from-brand-400 via-brand-200 to-signal-400 dark:from-brand-500 dark:via-brand-700 dark:to-signal-500 bg-gradient-to-br",
+        "from-brand-400 via-brand-200 to-brand-500 dark:from-brand-400 dark:via-brand-600 dark:to-brand-800 bg-gradient-to-br",
         rounded,
         className
       )}

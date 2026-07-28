@@ -9,6 +9,7 @@ import { Section } from "@/components/layout/section"
 import { Button } from "@/components/ui/button"
 import { TiltGlassCard } from "@/components/ui/tilt-glass-card"
 import { GradientMesh } from "@/components/marketing/gradient-mesh"
+import { TestimonialCard } from "@/components/marketing/testimonial-card"
 import { Reveal } from "@/components/motion/reveal"
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group"
 import { MagneticButton } from "@/components/motion/magnetic-button"
@@ -39,6 +40,9 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyPageProps
   const study = await getContentProvider().getCaseStudyBySlug(slug)
   if (!study) notFound()
 
+  const testimonials = await getContentProvider().getTestimonials()
+  const testimonial = testimonials.find((item) => item.company === study.client)
+
   return (
     <Section spacing="lg" className="relative overflow-hidden">
       <GradientMesh variant="subtle" />
@@ -61,6 +65,23 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyPageProps
             </StaggerItem>
           ))}
         </StaggerGroup>
+
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+          <Reveal className="flex flex-col gap-3">
+            <h2 className="text-lg font-semibold">The challenge</h2>
+            <p className="text-muted-foreground text-pretty">{study.challenge}</p>
+          </Reveal>
+          <Reveal delay={0.05} className="flex flex-col gap-3">
+            <h2 className="text-lg font-semibold">Our approach</h2>
+            <p className="text-muted-foreground text-pretty">{study.approach}</p>
+          </Reveal>
+        </div>
+
+        {testimonial ? (
+          <Reveal delay={0.1} className="max-w-xl">
+            <TestimonialCard testimonial={testimonial} />
+          </Reveal>
+        ) : null}
 
         <Reveal delay={0.1}>
           <MagneticButton>

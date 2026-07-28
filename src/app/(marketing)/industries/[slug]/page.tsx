@@ -42,7 +42,10 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
   const industry = await content.getIndustryBySlug(slug)
   if (!industry) notFound()
 
-  const relevantServices = (await content.getServices()).slice(0, 3)
+  const allServices = await content.getServices()
+  const relevantServices = industry.relevantServiceSlugs
+    .map((slug) => allServices.find((service) => service.slug === slug))
+    .filter((service) => service !== undefined)
 
   return (
     <>
