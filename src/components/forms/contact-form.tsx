@@ -70,8 +70,8 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5">
-        <div className="grid gap-5 sm:grid-cols-2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <div className="grid gap-4 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="name"
@@ -161,7 +161,7 @@ export function ContactForm() {
           </p>
         ) : null}
 
-        <Button ripple type="submit" size="lg" disabled={status === "submitting"} className="mt-2">
+        <Button ripple type="submit" size="lg" disabled={status === "submitting"} className="mt-1">
           {status === "submitting" ? <Loader2 className="size-4 animate-spin" /> : null}
           {status === "submitting" ? "Sending..." : "Book a Strategy Call"}
         </Button>

@@ -13,8 +13,8 @@ export const contactFormSchema = z.object({
 export type ContactFormValues = z.infer<typeof contactFormSchema>
 
 export const budgetOptions: { value: ContactFormValues["monthlyBudget"]; label: string }[] = [
-  { value: "under-2k", label: "Under $2,000 / month" },
-  { value: "2k-5k", label: "$2,000 – $5,000 / month" },
-  { value: "5k-15k", label: "$5,000 – $15,000 / month" },
-  { value: "15k-plus", label: "$15,000+ / month" },
+  { value: "under-2k", label: "Under ₹1,50,000 / month" },
+  { value: "2k-5k", label: "₹1,50,000 – ₹4,00,000 / month" },
+  { value: "5k-15k", label: "₹4,00,000 – ₹12,00,000 / month" },
+  { value: "15k-plus", label: "₹12,00,000+ / month" },
 ]

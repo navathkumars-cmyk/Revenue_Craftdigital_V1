@@ -85,7 +85,7 @@ export function GrowthAuditForm({ id, className }: GrowthAuditFormProps) {
   return (
     <div id={id} className={className}>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 p-6 sm:p-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-3.5 p-5 sm:p-6">
           <div className="flex flex-col gap-1">
             <h3 className="text-lg font-semibold">Get My Free Growth Audit</h3>
             <p className="text-muted-foreground text-sm">
@@ -231,7 +231,7 @@ export function GrowthAuditForm({ id, className }: GrowthAuditFormProps) {
             type="submit"
             size="lg"
             disabled={status === "submitting"}
-            className="shadow-glow mt-1 w-full"
+            className="shadow-glow w-full"
           >
             {status === "submitting" ? "Sending..." : "Get My Free Growth Audit"}
             {status === "submitting" ? (
