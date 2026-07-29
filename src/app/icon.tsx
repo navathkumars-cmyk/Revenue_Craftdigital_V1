@@ -1,9 +1,13 @@
 import { ImageResponse } from "next/og"
 
+import { getBrandIconDataUri } from "@/lib/brand-icon"
+
 export const size = { width: 32, height: 32 }
 export const contentType = "image/png"
 
-export default function Icon() {
+export default async function Icon() {
+  const iconSrc = await getBrandIconDataUri()
+
   return new ImageResponse(
     (
       <div
@@ -13,15 +17,12 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#4F46E5",
+          background: "#FFFFFF",
           borderRadius: 7,
-          color: "#FFFFFF",
-          fontSize: 20,
-          fontWeight: 700,
-          fontFamily: "sans-serif",
         }}
       >
-        R
+        {/* eslint-disable-next-line @next/next/no-img-element -- next/og renders its own <img>, not next/image */}
+        <img src={iconSrc} width={24} height={24} alt="" />
       </div>
     ),
     { ...size }

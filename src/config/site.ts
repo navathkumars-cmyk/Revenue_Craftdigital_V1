@@ -2,7 +2,6 @@ import type { NavItem } from "@/types"
 
 export const siteConfig = {
   name: "Revenue Craft Digital",
-  shortName: "Revenue Craft",
   tagline: "Performance Marketing, Engineered for Revenue.",
   description:
     "Revenue Craft Digital partners with ambitious businesses to engineer measurable growth through data-driven performance marketing — Google Ads, Meta Ads, conversion tracking, and AI-powered marketing systems built to compound revenue.",
@@ -19,6 +18,7 @@ export const siteConfig = {
 } as const
 
 export const mainNav: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },

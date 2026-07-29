@@ -29,7 +29,7 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent side="right" className="w-full sm:max-w-xs">
         <SheetHeader>
-          <SheetTitle>{siteConfig.shortName}</SheetTitle>
+          <SheetTitle>{siteConfig.name}</SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col gap-1 px-4" aria-label="Mobile">
           {mainNav.map((item) => (

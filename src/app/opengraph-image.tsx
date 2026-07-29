@@ -1,12 +1,15 @@
 import { ImageResponse } from "next/og"
 
 import { siteConfig } from "@/config/site"
+import { getBrandIconDataUri } from "@/lib/brand-icon"
 
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 export const alt = `${siteConfig.name} — ${siteConfig.tagline}`
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const iconSrc = await getBrandIconDataUri()
+
   return new ImageResponse(
     (
       <div
@@ -29,15 +32,14 @@ export default function OpengraphImage() {
               width: 68,
               height: 68,
               borderRadius: 18,
-              background: "#4F46E5",
+              background: "#FFFFFF",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 36,
-              fontWeight: 700,
             }}
           >
-            R
+            {/* eslint-disable-next-line @next/next/no-img-element -- next/og renders its own <img>, not next/image */}
+            <img src={iconSrc} width={46} height={47} alt="" />
           </div>
           <div style={{ fontSize: 34, fontWeight: 600, letterSpacing: -0.5 }}>{siteConfig.name}</div>
         </div>

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 
-import { siteConfig } from "@/config/site"
+import { Logo } from "@/components/layout/logo"
 
 /**
  * Brief branded splash shown once on initial load, then self-dismisses.
@@ -45,9 +45,8 @@ export function LoadingScreen() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="bg-brand-600 flex size-12 items-center justify-center rounded-xl text-lg font-bold text-white"
           >
-            {siteConfig.shortName.charAt(0)}
+            <Logo wordmark={false} iconSize={56} />
           </motion.span>
         </motion.div>
       ) : null}

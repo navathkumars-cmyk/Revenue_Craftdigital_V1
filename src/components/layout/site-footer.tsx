@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { footerNav, siteConfig } from "@/config/site"
 import { Container } from "@/components/layout/container"
+import { Logo } from "@/components/layout/logo"
 import { FloatingShape } from "@/components/motion/floating-shape"
 
 const socialLinks = [
@@ -34,11 +35,8 @@ export function SiteFooter() {
 
       <Container className="relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
-          <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="bg-brand-600 flex size-7 items-center justify-center rounded-md text-sm font-bold text-white">
-              R
-            </span>
-            <span>{siteConfig.shortName}</span>
+          <Link href="/">
+            <Logo />
           </Link>
           <p className="text-muted-foreground max-w-xs text-sm text-pretty">
             {siteConfig.tagline}

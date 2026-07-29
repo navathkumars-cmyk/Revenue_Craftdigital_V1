@@ -7,6 +7,7 @@ import { mainNav, siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/layout/container"
+import { Logo } from "@/components/layout/logo"
 import { MobileNav } from "@/components/layout/mobile-nav"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 
@@ -16,16 +17,13 @@ export function SiteHeader() {
   return (
     <header className="border-border/60 bg-background/80 sticky top-0 z-40 w-full border-b backdrop-blur-lg supports-backdrop-filter:bg-background/60">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="bg-brand-600 flex size-7 items-center justify-center rounded-md text-sm font-bold text-white">
-            R
-          </span>
-          <span className="text-foreground">{siteConfig.shortName}</span>
+        <Link href="/">
+          <Logo priority className="text-foreground" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {mainNav.map((item) => {
-            const isActive = pathname.startsWith(item.href)
+            const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href)
             return (
               <Link
                 key={item.href}
